@@ -6,7 +6,7 @@ export default function Home() {
       href: "https://chikoh.com",
       subLink: {
         label: "Developer Docs (MCP/API)",
-        href: "https://docs.chikoh.com",
+        href: "https://chikoh.com/developers",
       },
     },
     {
