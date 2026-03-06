@@ -4,6 +4,10 @@ export default function Home() {
       title: "Chikoh",
       description: "Agentic Commerce / AI Assistant.",
       href: "https://chikoh.com",
+      subLink: {
+        label: "Developer Docs (MCP/API)",
+        href: "https://docs.chikoh.com",
+      },
     },
     {
       title: "RM Payments Consulting",
@@ -11,9 +15,9 @@ export default function Home() {
       href: "https://rmpaymentsconsulting.com",
     },
     {
-      title: "Open Source",
-      description: "Infrastructure & Tooling.",
-      href: "https://github.com/romcdonald9976/rm-payments-consulting",
+      title: "GitHub Architecture",
+      description: "Public showcase of Next.js and agentic commerce patterns.",
+      href: "https://github.com/romcdonald9976/chikoh-architecture-showcase",
     },
   ];
 
@@ -33,17 +37,31 @@ export default function Home() {
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projectCards.map((card) => (
-              <a
+              <div
                 key={card.title}
-                href={card.href}
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label={`Open ${card.title} in a new tab`}
-                className="rounded-md border border-zinc-800 bg-zinc-950/60 p-6 transition-colors hover:border-zinc-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
+                className="rounded-md border border-zinc-800 bg-zinc-950/60 p-6 transition-colors hover:border-zinc-600"
               >
-                <h2 className="text-xl font-semibold text-white">{card.title}</h2>
-                <p className="mt-3 text-zinc-400">{card.description}</p>
-              </a>
+                <a
+                  href={card.href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label={`Open ${card.title} in a new tab`}
+                  className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
+                >
+                  <h2 className="text-xl font-semibold text-white">{card.title}</h2>
+                  <p className="mt-3 text-zinc-400">{card.description}</p>
+                </a>
+                {card.subLink && (
+                  <a
+                    href={card.subLink.href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="mt-4 inline-block rounded border border-zinc-700 px-3 py-1.5 text-xs font-medium text-zinc-300 transition-colors hover:border-zinc-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
+                  >
+                    {card.subLink.label}
+                  </a>
+                )}
+              </div>
             ))}
           </div>
         </section>
